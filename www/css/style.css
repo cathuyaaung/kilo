@@ -1,0 +1,29 @@
+/* Empty. Add your own CSS if you like */
+.col-block {
+  padding: 0px;
+  /*! width: 100%; */
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  /*background: #f7f7f7;*/
+  
+}
+.align-right{
+  text-align: right;  
+}
+
+.align-left{
+  text-align: left;  
+}
+
+.align-center{
+  text-align: center;  
+}
+
+.header{
+  font-weight: bold;  
+  text-align: center;  
+}
+
+.kilo-button{
+   padding: 0px; 
+}

@@ -1,0 +1,54 @@
+ <ion-view can-swipe-back="true" hide-back-button="false">
+<ion-nav-buttons side="left">
+    <button class="button button-positive" ng-click="goBack()">
+    Back
+    </button>
+</ion-nav-buttons>
+  <ion-content>
+    <div class="list list-inset">
+        <div class="button-bar padding">
+            <a class="button" ng-class="{'active' : data.activeButton === 'signup'}" ng-click="changeScreen('signup')" >Sign Up</a>
+            <a class="button" ng-class="{'active' : data.activeButton === 'login'}" ng-click="changeScreen('login')">Login</a>        
+        </div>
+        <div>&nbsp;</div>  
+        <div ng-show="data.activeButton === 'login'">
+            <label class="item item-input">
+            <input type="text" placeholder="Email" ng-model="data.user.email">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="data.user.pass">
+            </label>
+            <br/>
+            <div>
+                <button class="button button-block button-positive" ng-click="login()">
+                    Login
+                </button>        
+            </div>
+        </div>
+        <div ng-show="data.activeButton === 'signup'">
+            <label class="item item-input">
+            <input type="text" placeholder="User Name" ng-model="data.user.userName">
+            </label>
+            <label class="item item-input">
+            <input type="text" placeholder="Email" ng-model="data.user.email">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="data.user.pass">
+            </label>          
+            <br/>
+            <div>
+                <button class="button button-block button-positive" ng-click="signup()">
+                    Sign Up
+                </button>        
+            </div>
+        </div>
+        
+        
+        <button class="button button-block button-positive" ng-click="facebookLogin()">
+           Sign up or Log in with Facebook
+        </button>
+        
+     </div>
+  </ion-content>
+ </ion-view>
+

@@ -1,0 +1,23 @@
+<ion-view view-title="KiLo">
+  <ion-content class="padding">
+   <div class="row">
+    <div class="col col-block header">Route</div>
+    <div class="col col-block header">Want To Sell</div>
+    <div class="col col-block header">Want To Buy</div>
+   </div>
+    <div class="row" ng-repeat="route in data.routes | orderBy : 'sq'">
+        <div class="col col-block" >{{route.$id}} </div>
+        <div class="col col-block align-right" >            
+             <button class="button button-full button-stable kilo-button" ng-click="tab({{route}},'wts');">
+                {{route.wts}} Kg
+             </button>
+        </div>
+        <div class="col col-block align-right" >            
+             <button class="button button-full button-stable kilo-button" ng-click="tab({{route}},'wtb');">
+                 {{route.wtb}} Kg
+             </button>
+        </div>                                
+    </div>    
+    
+  </ion-content>
+</ion-view>

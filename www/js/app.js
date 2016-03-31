@@ -25,17 +25,26 @@ angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
             }
         });
     
-     $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {                      
+     $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {   
+         /*                   
         if (to.name !== 'login' && to.name !== 'tab.dash' && $rootScope.loggedInUser === undefined )
         { 
             ev.preventDefault();         
             $state.go('login',{to : to.name});
-        }    
+        }  */  
      });
         
 }])
-.constant("FBURL","https://kilo.firebaseio.com/")
-.config(function($stateProvider, $urlRouterProvider) {
+//.constant("FBURL","https://kilo.firebaseio.com/")
+.constant("APPCONFIG",
+    {
+        URL : "http://kiloheroapi.flansoft.com/",
+        DEBUG : true 
+    }
+)
+.config(
+    ['$stateProvider', '$urlRouterProvider',
+   function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -109,4 +118,8 @@ angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
-});
+}]);
+
+angular.module('kilo.controllers', []);
+
+angular.module('kilo.services', []);

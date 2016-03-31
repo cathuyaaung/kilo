@@ -1,5 +1,5 @@
 angular.module('kilo.controllers', [])
-
+/*
 .controller('DashCtrl', function($rootScope,$scope,Routes) {
     $scope.$on('$ionicView.enter', function(e) {
         //console.log(_sc.routes);        
@@ -21,13 +21,13 @@ angular.module('kilo.controllers', [])
            //console.log($scope.data);           
        //});
                  
-})
+}) 
 .controller('SellCtrl', function($rootScope,$scope) {
     $scope.$on('$ionicView.enter', function(e) {
         console.log(e);
     });    
     //$rootScope.loggedInUser = "123";
-})
+})*/
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -52,6 +52,7 @@ angular.module('kilo.controllers', [])
     enableFriends: true
   };
 })
+/*
 .controller('LoginCtrl', function($rootScope,$scope,$state,$stateParams,$ionicNavBarDelegate,Auth,Users) {
    
    var _sc = $scope.data = { 
@@ -77,7 +78,7 @@ angular.module('kilo.controllers', [])
     }
     function facebookLogin(){       
         alert("Stay Tuned");
-        /*
+       
          Auth.facebookLogin()
         .then(function(authData) {
             console.log('Logged in successfully as: ', authData.uid);
@@ -86,7 +87,7 @@ angular.module('kilo.controllers', [])
         }).catch(function(error) {
             console.log('Error: ', error);
         });
-        */
+       
     }
     function goBack(){
         $state.go('tab.dash');
@@ -113,8 +114,8 @@ angular.module('kilo.controllers', [])
         }).catch(function(error) {
             alert(error);
         });
-    }
-    
-    
-})
+    } 
+}
+
+)*/
 ;

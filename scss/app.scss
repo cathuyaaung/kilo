@@ -1,0 +1,33 @@
+$big-bg:      'http://ioniconf.com/img/bg.jpg';
+.scroll-bg {
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+} 
+.col-block {
+  padding: 3px;
+  /*! width: 100%; */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f7f7f7; 
+}
+
+.align-right{
+  text-align: right;  
+}
+
+.align-left{
+  text-align: left;  
+}
+
+.align-center{
+  text-align: center;  
+}
+
+.v-align-middle{
+  vertical-align: middle;
+}
+
+.align-center-middle{
+    text-align: center;  
+    vertical-align: middle;
+}

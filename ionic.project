@@ -1,4 +1,12 @@
 {
   "name": "KiLo",
-  "app_id": "133216b6"
+  "app_id": "133216b6",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/**/*",
+    "!www/lib/**/*"
+  ]
 }

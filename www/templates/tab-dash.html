@@ -1,23 +1,36 @@
 <ion-view view-title="KiLo">
-  <ion-content class="padding">
-   <div class="row">
-    <div class="col col-block header">Route</div>
-    <div class="col col-block header">Want To Sell</div>
-    <div class="col col-block header">Want To Buy</div>
-   </div>
-    <div class="row" ng-repeat="route in data.routes | orderBy : 'sq'">
-        <div class="col col-block" >{{route.$id}} </div>
-        <div class="col col-block align-right" >            
-             <button class="button button-full button-stable kilo-button" ng-click="tab({{route}},'wts');">
-                {{route.wts}} Kg
-             </button>
+    <!--
+    <ion-header-bar class="bar bar-subheader item-input-inset"> 
+        <label class="item-input-wrapper search">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input placeholder="Search..." ng-keyup="searchList($event)" type="text"> 
+        </label>
+    </ion-header-bar>
+    -->
+    <ion-content>
+        <div class="row" ng-repeat="v in data.routes" ng-if="$index % 2 === 0">
+            <div class="col col-50 col-block" ng-if="$index < data.routes.length">    
+                <div class="row row-center col-block" >
+                    <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index].from)}} v-align-middle"></span></h1></div>                        
+                    <div class="col col-10 col-center align-center"><i class="icon ion-android-arrow-forward"></i></div>
+                    <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index].to)}} v-align-middle"></span></h1></div>
+                </div>
+                <div class="row row-center col-block">
+                    <div class="col col-center align-center"><span class="badge badge-positive">W T S</br>{{data.routes[$index].wts}} Kg</span></div>                                          
+                    <div class="col col-center align-center"><span class="badge badge-positive">W T B</br>{{data.routes[$index].wtb}} Kg</span></div>
+                </div>                                 
+            </div>
+            <div class="col col-50 col-block" ng-if="$index + 1 < data.routes.length">
+                <div class="row row-center col-block" >
+                    <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index+1].from)}} v-align-middle"></span></h1></div>                        
+                    <div class="col col-10 col-center align-center"><i class="icon ion-android-arrow-forward"></i></div>
+                    <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index+1].to)}} v-align-middle"></span></h1></div>
+                </div>
+                <div class="row row-center col-block">
+                    <div class="col col-center align-center"><span class="badge badge-positive">W T S</br>{{data.routes[$index+1].wts}} Kg</span></div>                                          
+                    <div class="col col-center align-center"><span class="badge badge-positive">W T B</br>{{data.routes[$index+1].wtb}} Kg</span></div>
+                </div>                    
+            </div>
         </div>
-        <div class="col col-block align-right" >            
-             <button class="button button-full button-stable kilo-button" ng-click="tab({{route}},'wtb');">
-                 {{route.wtb}} Kg
-             </button>
-        </div>                                
-    </div>    
-    
-  </ion-content>
+    </ion-content>
 </ion-view>

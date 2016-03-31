@@ -1,3 +1,4 @@
+/*
 angular.module('kilo.services', ['firebase'])
 .factory('Auth', function($firebaseAuth, FBURL, $window) {
   var ref = new $window.Firebase(FBURL);
@@ -36,6 +37,7 @@ angular.module('kilo.services', ['firebase'])
       }      
   }; 
 })
+
 .factory('Routes', function($firebaseArray,$firebaseObject, FBURL, $window) {
   var ref = new $window.Firebase(FBURL + 'routes');
   var routes = $firebaseArray(ref);
@@ -49,6 +51,7 @@ angular.module('kilo.services', ['firebase'])
       }    
   }; 
 })
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
@@ -97,3 +100,4 @@ angular.module('kilo.services', ['firebase'])
     }
   };
 });
+*/

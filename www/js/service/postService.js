@@ -18,11 +18,11 @@
                 return apiService.get(APPCONFIG.URL + 'posts', null, success, failure);             
             }
             
-            function getRoutePosts(posttype,route,success,failure){
+            function getRoutePosts(routeId,routeType,success,failure){                
                 if (APPCONFIG.DEBUG){
                     return apiService.get("js/service/data/posts.js",null,success,failure);    
                 }else {
-                    return apiService.get(APPCONFIG.URL + 'posts/' + posttype + '/' + route , null, success, failure);                        
+                    return apiService.get(APPCONFIG.URL + 'posts/' + routeType + '/' + routeId , null, success, failure);                        
                 }                           
             }
             

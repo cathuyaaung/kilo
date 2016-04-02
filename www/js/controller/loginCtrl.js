@@ -4,9 +4,16 @@
         
         app.controller('LoginCtrl',LoginCtrl);
         
-        LoginCtrl.$inject = ['$rootScope','$scope','$state','$stateParams','$ionicNavBarDelegate','Auth','Users'];
+       //LoginCtrl.$inject = ['$rootScope','$scope','$state','$stateParams','$ionicNavBarDelegate','Auth','Users'];
         
-       function LoginCtrl($rootScope,$scope,$state,$stateParams,$ionicNavBarDelegate,Auth,Users) {
+       //function LoginCtrl($rootScope,$scope,$state,$stateParams,$ionicNavBarDelegate,Auth,Users) {
+           
+       LoginCtrl.$inject = ['$rootScope','$scope','$state','$stateParams','$ionicNavBarDelegate'];
+        
+       function LoginCtrl($rootScope,$scope,$state,$stateParams,$ionicNavBarDelegate) {
+           
+           var Auth = {};
+           var Users = {};
    
             var _sc = $scope.data = { 
                 'activeButton' : 'login',

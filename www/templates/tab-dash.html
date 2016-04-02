@@ -10,25 +10,25 @@
     <ion-content>
         <div class="row" ng-repeat="v in data.routes" ng-if="$index % 2 === 0">
             <div class="col col-50 col-block" ng-if="$index < data.routes.length">    
-                <div class="row row-center col-block" >
+                <div class="row row-center col-block" ng-click="routeClick('{{data.routes[$index].id}}');">
                     <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index].from)}} v-align-middle"></span></h1></div>                        
                     <div class="col col-10 col-center align-center"><i class="icon ion-android-arrow-forward"></i></div>
                     <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index].to)}} v-align-middle"></span></h1></div>
                 </div>
                 <div class="row row-center col-block">
-                    <div class="col col-center align-center"><span class="badge badge-positive">W T S</br>{{data.routes[$index].wts}} Kg</span></div>                                          
-                    <div class="col col-center align-center"><span class="badge badge-positive">W T B</br>{{data.routes[$index].wtb}} Kg</span></div>
+                    <div class="col col-center align-center"><span class="badge badge-calm" ng-click="routeClick('{{data.routes[$index].id}}','wts');">W T S</br>{{data.routes[$index].wts}} Kg</span></div>                                          
+                    <div class="col col-center align-center"><span class="badge badge-calm" ng-click="routeClick('{{data.routes[$index].id}}','wtb');">W T B</br>{{data.routes[$index].wtb}} Kg</span></div>
                 </div>                                 
             </div>
             <div class="col col-50 col-block" ng-if="$index + 1 < data.routes.length">
-                <div class="row row-center col-block" >
+                <div class="row row-center col-block" ng-click="routeClick('{{data.routes[$index+1].id}}');" >
                     <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index+1].from)}} v-align-middle"></span></h1></div>                        
                     <div class="col col-10 col-center align-center"><i class="icon ion-android-arrow-forward"></i></div>
                     <div class="col col-45 col-center align-center"><h1><span class="flag-icon flag-icon-{{getCountry(data.routes[$index+1].to)}} v-align-middle"></span></h1></div>
                 </div>
                 <div class="row row-center col-block">
-                    <div class="col col-center align-center"><span class="badge badge-positive">W T S</br>{{data.routes[$index+1].wts}} Kg</span></div>                                          
-                    <div class="col col-center align-center"><span class="badge badge-positive">W T B</br>{{data.routes[$index+1].wtb}} Kg</span></div>
+                    <div class="col col-center align-center"><span class="badge badge-calm" ng-click="routeClick('{{data.routes[$index].id}}','wts');">W T S</br>{{data.routes[$index+1].wts}} Kg</span></div>                                          
+                    <div class="col col-center align-center"><span class="badge badge-calm" ng-click="routeClick('{{data.routes[$index].id}}','wtb');">W T B</br>{{data.routes[$index+1].wtb}} Kg</span></div>
                 </div>                    
             </div>
         </div>

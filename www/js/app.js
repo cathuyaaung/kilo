@@ -8,8 +8,8 @@
 angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
 
 .run(
-  ['$ionicPlatform','$rootScope','$state',  
-  function($ionicPlatform,$rootScope,$state) {
+  ['$ionicPlatform','$rootScope','$state','AppValue',  
+  function($ionicPlatform,$rootScope,$state,AppValue) {
     $ionicPlatform.ready(
         function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -25,23 +25,32 @@ angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
             }
         });
     
-     $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {   
-         /*                   
+     $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) { 
+         console.log(to);  
+         console.log(AppValue);
+         //console.log(fromParams);
+        /*                  
         if (to.name !== 'login' && to.name !== 'tab.dash' && $rootScope.loggedInUser === undefined )
         { 
             ev.preventDefault();         
             $state.go('login',{to : to.name});
-        }  */  
+        } */ 
      });
         
 }])
 //.constant("FBURL","https://kilo.firebaseio.com/")
 .constant("APPCONFIG",
-    {
+    {        
         URL : "http://kiloheroapi.flansoft.com/",
         DEBUG : true 
     }
 )
+.value("AppValue", {
+    tabBrowse : '#/tab/dash',
+    tabBuySell :'#/tab/sell',
+    tabChat: '#/tab/chats',
+    tabAccount : '#/tab/account'
+})
 .config(
     ['$stateProvider', '$urlRouterProvider',
    function($stateProvider, $urlRouterProvider) {
@@ -56,6 +65,7 @@ angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
   .state('tab', {
     url: '/tab',
     abstract: true,
+    controller : 'TabCtrl',
     templateUrl: 'templates/tabs.html'
   })
   // Each tab has its own nav history stack:
@@ -68,7 +78,26 @@ angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
       }
     }
   })
+  .state('tab.dashdetails', { 
+    url: '/dashdetails/:routeId/:routeType',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-dash-details.html',
+        controller: 'DashDetailsCtrl'
+      }
+    }
+  })
+  .state('tab.dashdetailspost', { 
+    url: '/dashdetailspost/:postId',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-dash-details-post.html',
+        controller: 'DashDetailsPostCtrl'
+      }
+    }
+  })
     .state('tab.sell', {
+    //url: '/sell/:routeId/:routeType',
     url: '/sell',
     views: {
       'tab-sell': {

@@ -26,8 +26,22 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
 .v-align-middle{
   vertical-align: middle;
 }
-
 .align-center-middle{
     text-align: center;  
     vertical-align: middle;
+}
+.padding-top-40{
+  padding-top : 40px;  
+}
+.padding-top-80{
+  padding-top : 80px; 
+}
+.padding-top-120{
+  padding-top : 120px;  
+}
+.padding-top-160{
+  padding-top : 160px;  
+}
+.fixed-div{
+     position: fixed;
 }

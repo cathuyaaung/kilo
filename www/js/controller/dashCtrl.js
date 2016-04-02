@@ -4,9 +4,9 @@
          
          app.controller('DashCtrl', DashCtrl);
          
-         DashCtrl.$inject = ['$rootScope','$scope','routeService'];
+         DashCtrl.$inject = ['$rootScope','$scope','$state','routeService'];
          
-         function DashCtrl($rootScope,$scope,routeService) {
+         function DashCtrl($rootScope,$scope,$state,routeService) {
                 $scope.$on('$ionicView.enter', function(e) {
                     //console.log(_sc.routes);                            
                 });    
@@ -17,8 +17,9 @@
                 
                 routeService.getRoutes(loadSuccess,failed)
                 
-                $scope.tab = tab;
+                //$scope.tab = tab;
                 $scope.getCountry = getCountry;
+                $scope.routeClick = routeClick;
                 
                 function tab(obj) {
                     console.log(obj);
@@ -48,8 +49,13 @@
                            return 'us';   
                        default:
                            return '';
-                   }
-                                       
+                   }                                       
+                }
+                
+                function routeClick(route_id,route_type){     
+                       
+                    var parameter = {routeId : route_id, routeType : route_type  };                                   
+                    $state.go('tab.dashdetails',parameter);                                
                 }
                 
                 

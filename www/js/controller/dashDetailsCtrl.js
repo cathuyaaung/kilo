@@ -2,11 +2,11 @@
     function(app){
         'use strict';
         
-         app.controller('SellCtrl', SellCtrl);
+         app.controller('DashDetailsCtrl', DashDetailsCtrl);
          
-         SellCtrl.$inject = ['$rootScope','$scope','$state','$stateParams','AppValue','postService','routeService'];
+         DashDetailsCtrl.$inject = ['$rootScope','$scope','$state','$stateParams','AppValue','postService','routeService'];
          
-         function SellCtrl($rootScope,$scope,$state,$stateParams,AppValue,postService,routeService){
+         function DashDetailsCtrl($rootScope,$scope,$state,$stateParams,AppValue,postService,routeService){
              
              var _sc = $scope.data = { 
                posts : [],
@@ -18,23 +18,29 @@
              
             $scope.changeScreen = changeScreen;
             $scope.changeRoute = changeRoute;
+            $scope.selectPost = selectPost;
              
             $scope.$on('$ionicView.enter', function(e) {                
                 if(_sc.routes.length === 0){
                     loadRoutes();    
                 }
                 loadPosts();
+                AppValue.tabBrowse = "tab.dashdetails";                                
             });
     
            
-
+                
            
             function changeScreen(v){
+                console.log(v);
                 _sc.routeType = v;
                 loadPosts();
             }
             function changeRoute(){
                 console.log(_sc.selectedRoute);
+            }
+            function selectPost(v){
+                $state.go('tab.dashdetailspost',{postId:v.id});
             }
             function loadPosts(){
                 if(_sc.routeType === ''){
@@ -53,7 +59,19 @@
             }
             function loadRouteSuccess(result){
                 _sc.routes = result.data;
-            }
+                
+                for (var index = 0; index < _sc.routes.length; index++) {
+                    var element =  _sc.routes[index];
+                   
+                    if(element.id == _sc.routeId ){
+                        element.selected = true;                        
+                        _sc.selectedRoute = element;
+                        break;                    
+                    } else {
+                        element.selected = false;                    
+                    }                    
+                }                                
+           }
             function failed(params) {
                 
             }                        

@@ -1,0 +1,39 @@
+<ion-view view-title="KiLo" >
+   
+    <ion-content scroll="true"  >
+        
+         <div class="fixed-div">
+        <label class="item item-input item-select">
+            <div class="input-label">
+            Route
+            </div>
+            <select ng-model="data.selectedRoute" ng-change="changeRoute()">
+                <option ng-repeat="d in data.routes" value="{{d}}">{{d.name}}</option>                                
+            </select>
+        </label>
+        </div>
+        <div >
+        <label class="item item-input item-select">
+            <div class="input-label">
+            Route
+            </div>
+            <select ng-model="data.selectedRoute" ng-change="changeRoute()">
+                <option ng-repeat="d in data.routes" value="d.id" ng-selected="d.selected">{{d.name}}</option>                                
+            </select>
+        </label>
+        </div>
+        <div class="button-bar" >
+            <a class="button " ng-class="{'active' : data.routeType === 'wts'}" ng-click="changeScreen('wts')" >Sell</a>
+            <a class="button " ng-class="{'active' : data.routeType === 'wtb'}" ng-click="changeScreen('wtb')">Buy</a>        
+        </div> 
+        
+        <div class="card col-block" collection-repeat="d in data.posts" ng-click="selectPost(d)" >
+            <div class="row" >
+                <div class="col">Date : {{d.date}}</div> <div class="col">{{d.user}}</div>
+            </div>
+            <div class="row">
+                <div class="col">Available Kilo : {{d.kilo}} kg</div> <div class="col"> Price : {{d.price}}</div>
+            </div>
+        </div>
+    </ion-content>       
+</ion-view>

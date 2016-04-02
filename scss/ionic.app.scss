@@ -15,14 +15,15 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
- $positive:                        purple !default;
+ $positive:                        #DC5C05 !default;
+ $calm:                            #FF9000 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
+    
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
+ 
 @import "flag-icon";
  
 @import "app"; 

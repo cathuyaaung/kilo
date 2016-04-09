@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('kilo', ['ionic', 'kilo.controllers', 'kilo.services'])
+angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'])
 
 .run(
   ['$ionicPlatform','$rootScope','$state','AppValue',  

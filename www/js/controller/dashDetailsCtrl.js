@@ -16,10 +16,11 @@
                routeType : ($stateParams.routeType === '' ? 'wts' : $stateParams.routeType),                       
             }
              
-            $scope.changeScreen = changeScreen;
+            $scope.changeType = changeType;
             $scope.changeRoute = changeRoute;
+            $scope.changeDate = changeDate;
             $scope.selectPost = selectPost;
-             
+                         
             $scope.$on('$ionicView.enter', function(e) {                
                 if(_sc.routes.length === 0){
                     loadRoutes();    
@@ -28,16 +29,16 @@
                 AppValue.tabBrowse = "tab.dashdetails";                                
             });
     
-           
-                
-           
-            function changeScreen(v){
+            function changeType(v){
                 console.log(v);
                 _sc.routeType = v;
                 loadPosts();
             }
             function changeRoute(){
                 console.log(_sc.selectedRoute);
+            }
+            function changeDate(){
+                
             }
             function selectPost(v){
                 $state.go('tab.dashdetailspost',{postId:v.id});

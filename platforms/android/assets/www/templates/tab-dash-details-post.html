@@ -1,0 +1,48 @@
+<ion-view view-title="KiLo" >
+   
+    <ion-content scroll="true"  >
+        
+        <form novalidate="novalidate" on-valid-submit="save()">
+        <div class="items padding">
+          <div class="list items">
+              <label class="item item-input validated">
+              <span class="input-label">Want To</span>
+               <select>
+                <option>Buy</option>
+                <option selected>Sell</option>
+               </select>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Total Kilo</span>
+              <input name="firstname" type="text" ng-model="contact.first_name" required="required" placeholder="total kilo">
+              <i class="icon ion-alert-circled error" ></i>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Price</span>
+              <input name="lastname" type="text" required="required" ng-model="contact.last_name" placeholder="price">
+              <i class="icon ion-alert-circled error"></i>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Route</span>
+               <select>
+                <option>SIN-YGN</option>
+                <option selected>YGN-SIN</option>
+                <option>US-SIN</option>
+               </select>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Currency</span>
+               <select>
+                <option>USD</option>
+                <option selected>SGD</option>
+                <option>MYR</option>
+               </select>
+            </label>
+          </div>
+            <button type="submit" class="button button-block button-calm" ng-click="openDatePicker()">
+            <strong>Submit</strong>
+          </button>
+        </div> 
+      </form>
+    </ion-content>       
+</ion-view>

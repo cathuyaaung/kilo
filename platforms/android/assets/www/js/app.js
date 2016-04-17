@@ -26,8 +26,8 @@ angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'
         });
     
      $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) { 
-         console.log(to);  
-         console.log(AppValue);
+         //console.log(to);  
+         //console.log(AppValue);
          //console.log(fromParams);
         /*                  
         if (to.name !== 'login' && to.name !== 'tab.dash' && $rootScope.loggedInUser === undefined )
@@ -49,7 +49,8 @@ angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'
     tabBrowse : '#/tab/dash',
     tabBuySell :'#/tab/sell',
     tabChat: '#/tab/chats',
-    tabAccount : '#/tab/account'
+    tabAccount : '#/tab/account',
+    routeTypes : [{value : 'wtb', desc : 'Want to Buy'},{value : 'wts' , desc : 'Want to sell'} ]
 })
 .config(
     ['$stateProvider', '$urlRouterProvider',

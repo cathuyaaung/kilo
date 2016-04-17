@@ -1,61 +1,45 @@
 <ion-view view-title="KiLo" >
    <ion-header-bar class="bar bar-subheader ">        
-       <!--
-       <div>
-        <label class="item item-input item-select">
-            <div class="input-label">
-                Route
-            </div>
-            <select ng-model="data.selectedRoute" ng-change="changeRoute()">
-                <option ng-repeat="d in data.routes" value="d.id" ng-selected="d.selected">{{d.name}}</option>                                
-            </select>
-        </label>
-       </div>    
-        <div class="button-bar  button-outline" >
-            <a class="button " ng-class="{'active' : data.routeType === 'wts'}" ng-click="changeScreen('wts')" >Sell</a>
-            <a class="button " ng-class="{'active' : data.routeType === 'wtb'}" ng-click="changeScreen('wtb')">Buy</a>        
-        </div>      
-        -->    
         <div class="row col-block padding-zero">
-            <div class="col padding-zero">
+            <div class="col col-40 padding-zero" ng-click="changeRoute()">
                 <div class="row padding-zero">
-                    <div class="col">
-                        Route                        
+                    <div class="col font-small">
+                        <b>Route</b>                        
                     </div>
                 </div>
                 <div class="row padding-zero">
-                    <div class="col col-90 ">
-                        route                      
+                    <div class="col col-90 font-small">
+                        {{data.selectedRoute.name}}                     
                     </div>
                     <div class="col col-10">
                         <span class="caret"></span>                    
                     </div>
                 </div>
             </div>
-             <div class="col padding-zero">
+             <div class="col col-30 padding-zero" ng-click="changeType()">
                 <div class="row padding-zero">
-                    <div class="col">
-                        Type                        
+                    <div class="col font-small">
+                        <b>Type</b>                        
                     </div>
                 </div>
                 <div class="row padding-zero">
-                    <div class="col col-90 ">
-                        route                      
+                    <div class="col col-90 font-small">
+                        {{data.selectedRouteTypeDesc}}                   
                     </div>
                     <div class="col col-10">
                         <span class="caret"></span>                    
                     </div>
                 </div>
             </div>
-             <div class="col padding-zero">
+             <div class="col col-30 padding-zero" ng-click="changeDate()">
                 <div class="row padding-zero">
-                    <div class="col">
-                        Date                        
+                    <div class="col font-small">
+                        <b>Date</b>                        
                     </div>
                 </div>
                 <div class="row padding-zero">
-                    <div class="col col-90 ">
-                        route                      
+                    <div class="col col-90 font-small">
+                        {{data.selectedDate}}                      
                     </div>
                     <div class="col col-10">
                         <span class="caret"></span>                    

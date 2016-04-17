@@ -15,8 +15,8 @@
 		3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */; };
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
-		9C76708555CC4FDB94FBACE8 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B528EF792A3C40F09FFD2ADE /* DatePicker.m */; };
-		B880992811544190A5FD0821 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94BA5CB6B8D54EFD9BFBB52E /* DatePicker.xib */; };
+		BE392FE8FB6345AFA4F74EF3 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1C51D4A33D4F8BAD6AC280 /* DatePicker.m */; };
+		8DF4AFD7D45849C5885A0C07 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = F23ACBD367DF44C199253C13 /* DatePicker.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +56,9 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "KiLo/config.xml"; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B528EF792A3C40F09FFD2ADE /* DatePicker.m */ = {isa = PBXFileReference; name = "DatePicker.m"; path = "cordova-plugin-datepicker/DatePicker.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		EB1A7B5E8E9945F1ADB3D69E /* DatePicker.h */ = {isa = PBXFileReference; name = "DatePicker.h"; path = "cordova-plugin-datepicker/DatePicker.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		94BA5CB6B8D54EFD9BFBB52E /* DatePicker.xib */ = {isa = PBXFileReference; name = "DatePicker.xib"; path = "DatePicker.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
+		5A1C51D4A33D4F8BAD6AC280 /* DatePicker.m */ = {isa = PBXFileReference; name = "DatePicker.m"; path = "cordova-plugin-datepicker/DatePicker.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		A436872F426E437F9E912477 /* DatePicker.h */ = {isa = PBXFileReference; name = "DatePicker.h"; path = "cordova-plugin-datepicker/DatePicker.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F23ACBD367DF44C199253C13 /* DatePicker.xib */ = {isa = PBXFileReference; name = "DatePicker.xib"; path = "DatePicker.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* KiLo-Info.plist */,
-				94BA5CB6B8D54EFD9BFBB52E /* DatePicker.xib */,
+				F23ACBD367DF44C199253C13 /* DatePicker.xib */,
 			);
 			name = Resources;
 			path = "KiLo/Resources";
@@ -162,8 +162,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				B528EF792A3C40F09FFD2ADE /* DatePicker.m */,
-				EB1A7B5E8E9945F1ADB3D69E /* DatePicker.h */,
+				5A1C51D4A33D4F8BAD6AC280 /* DatePicker.m */,
+				A436872F426E437F9E912477 /* DatePicker.h */,
 			);
 			name = Plugins;
 			path = "KiLo/Plugins";
@@ -247,7 +247,7 @@
 				3047A5141AB8059700498E2A /* build.xcconfig in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
-				B880992811544190A5FD0821 /* DatePicker.xib in Resources */,
+				8DF4AFD7D45849C5885A0C07 /* DatePicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +279,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				9C76708555CC4FDB94FBACE8 /* DatePicker.m in Sources */,
+				BE392FE8FB6345AFA4F74EF3 /* DatePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

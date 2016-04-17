@@ -1,12 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
 angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'])
-
 .run(
   ['$ionicPlatform','$rootScope','$state','AppValue',  
   function($ionicPlatform,$rootScope,$state,AppValue) {
@@ -26,15 +18,13 @@ angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'
         });
     
      $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) { 
-         console.log(to);  
-         console.log(AppValue);
-         //console.log(fromParams);
-        /*                  
-        if (to.name !== 'login' && to.name !== 'tab.dash' && $rootScope.loggedInUser === undefined )
+                       
+        if (to.name !== 'login' && to.name !== 'tab.dash' && to.name !== 'tab.dashdetails'
+         && to.name !== 'tab.dashdetailspost' && typeof(AppValue.auth) === 'undefined' )
         { 
             ev.preventDefault();         
             $state.go('login',{to : to.name});
-        } */ 
+        } 
      });
         
 }])
@@ -46,14 +36,16 @@ angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'
     }
 )
 .value("AppValue", {
+    auth : undefined, //{token : 'xxxxxxxxxxxxxxxxxxx'},
     tabBrowse : '#/tab/dash',
     tabBuySell :'#/tab/sell',
     tabChat: '#/tab/chats',
-    tabAccount : '#/tab/account'
+    tabAccount : '#/tab/account',
+    routeTypes : [{value : 'wtb', desc : 'Want to Buy'},{value : 'wts' , desc : 'Want to sell'} ]
 })
 .config(
-    ['$stateProvider', '$urlRouterProvider',
-   function($stateProvider, $urlRouterProvider) {
+    ['$stateProvider', '$urlRouterProvider','$httpProvider',
+   function($stateProvider, $urlRouterProvider,$httpProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -146,6 +138,8 @@ angular.module('kilo', ['ionic','ngCordova', 'kilo.controllers', 'kilo.services'
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
+  
+  $httpProvider.interceptors.push('httpInterceptor');
 
 }]);
 

@@ -1,32 +1,71 @@
 <ion-view view-title="KiLo" >
-   
-    <ion-content scroll="true"  >
-        
-         <div class="fixed-div">
+   <ion-header-bar class="bar bar-subheader ">        
+       <!--
+       <div>
         <label class="item item-input item-select">
             <div class="input-label">
-            Route
-            </div>
-            <select ng-model="data.selectedRoute" ng-change="changeRoute()">
-                <option ng-repeat="d in data.routes" value="{{d}}">{{d.name}}</option>                                
-            </select>
-        </label>
-        </div>
-        <div >
-        <label class="item item-input item-select">
-            <div class="input-label">
-            Route
+                Route
             </div>
             <select ng-model="data.selectedRoute" ng-change="changeRoute()">
                 <option ng-repeat="d in data.routes" value="d.id" ng-selected="d.selected">{{d.name}}</option>                                
             </select>
         </label>
-        </div>
-        <div class="button-bar" >
+       </div>    
+        <div class="button-bar  button-outline" >
             <a class="button " ng-class="{'active' : data.routeType === 'wts'}" ng-click="changeScreen('wts')" >Sell</a>
             <a class="button " ng-class="{'active' : data.routeType === 'wtb'}" ng-click="changeScreen('wtb')">Buy</a>        
-        </div> 
-        
+        </div>      
+        -->    
+        <div class="row col-block padding-zero">
+            <div class="col padding-zero">
+                <div class="row padding-zero">
+                    <div class="col">
+                        Route                        
+                    </div>
+                </div>
+                <div class="row padding-zero">
+                    <div class="col col-90 ">
+                        route                      
+                    </div>
+                    <div class="col col-10">
+                        <span class="caret"></span>                    
+                    </div>
+                </div>
+            </div>
+             <div class="col padding-zero">
+                <div class="row padding-zero">
+                    <div class="col">
+                        Type                        
+                    </div>
+                </div>
+                <div class="row padding-zero">
+                    <div class="col col-90 ">
+                        route                      
+                    </div>
+                    <div class="col col-10">
+                        <span class="caret"></span>                    
+                    </div>
+                </div>
+            </div>
+             <div class="col padding-zero">
+                <div class="row padding-zero">
+                    <div class="col">
+                        Date                        
+                    </div>
+                </div>
+                <div class="row padding-zero">
+                    <div class="col col-90 ">
+                        route                      
+                    </div>
+                    <div class="col col-10">
+                        <span class="caret"></span>                    
+                    </div>
+                </div>
+            </div>
+        </div>  
+               
+    </ion-header-bar>
+    <ion-content scroll="true" class="has-subheader1" >
         <div class="card col-block" collection-repeat="d in data.posts" ng-click="selectPost(d)" >
             <div class="row" >
                 <div class="col">Date : {{d.date}}</div> <div class="col">{{d.user}}</div>

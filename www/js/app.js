@@ -6,7 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('kilo', [
-    'ionic', 
+    'ionic',
+    'ngCordova',
     'kilo.controllers', 
     'kilo.services',
     'angular-meteor',

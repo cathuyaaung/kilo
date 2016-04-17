@@ -30,6 +30,9 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
     text-align: center;  
     vertical-align: middle;
 }
+.padding-zero{
+    padding: 0px;    
+}
 .padding-top-40{
   padding-top : 40px;  
 }
@@ -44,4 +47,20 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
 }
 .fixed-div{
      position: fixed;
+}
+
+.caret {
+    position: absolute;    
+    display: inline-block;
+    width: 0;
+    height: 0;    
+    margin-top: 9px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
 }

@@ -31,7 +31,7 @@ angular.module('kilo', [
          && to.name !== 'tab.dashdetailspost' && typeof(AppValue.auth) === 'undefined' )
         { 
             ev.preventDefault();         
-            //$state.go('login',{to : to.name});
+            $state.go('login',{to : to.name});
         } 
      });
         

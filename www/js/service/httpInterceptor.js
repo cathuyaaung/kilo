@@ -11,9 +11,9 @@
            return {
                 request: function(config) {
                     if (typeof(AppValue.auth) !== 'undefined'){
-                        config.headers['x-kilo-token'] = AppValue.auth.token;    
+                       // config.headers['x-kilo-token'] = AppValue.auth.token;    
                     }else{
-                        config.headers['x-kilo-token'] = "xxx";
+                       // config.headers['x-kilo-token'] = "xxx";
                     }
                     return config;
                 },

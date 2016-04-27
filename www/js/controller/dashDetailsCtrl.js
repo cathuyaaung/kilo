@@ -10,8 +10,6 @@
              
               $ionicPlatform.ready(function() {
                 
-               
-                
                 $scope.openDatePicker = function(){
                     
                      var options = {
@@ -26,8 +24,16 @@
                         cancelButtonColor: '#000000'
                     };
                     
+                    if(_sc.selectedDate !== 'All'){
+                        var year = _sc.selectedDate.substr(6,4);
+                        var month = _sc.selectedDate.substr(3,2) - 1;
+                        var day = _sc.selectedDate.substr(0,2);
+                        options.date = new Date(year,month,day);
+                    }
+                    
                     $cordovaDatePicker.show(options).then(function(date){
-                        _sc.selectedDate = date;  
+                        var day = moment(date);
+                        _sc.selectedDate = day.format("DD/MM/YYYY");  
                     });
                 }        
             });
@@ -41,7 +47,9 @@
                routeId : $stateParams.routeId,
                selectedRouteType : ($stateParams.routeType === '' ? 'wts' : $stateParams.routeType),
                selectedRouteTypeDesc : ($stateParams.routeType === 'wts' ? 'Want to sell' : 'Want to buy'),
-               selectedDate : 'All'                                      
+               selectedDate : 'All',
+               barCSS : {padding : '0px' , overflow : 'hidden'},     
+               contentCSS : {}                               
             }
              
             $scope.changeType = changeType;
@@ -52,13 +60,17 @@
             $scope.routeSelected = routeSelected;
             $scope.cancelModalRouteType = cancelModalRouteType;
             $scope.routeTypeSelected = routeTypeSelected;
-                         
+             
             $scope.$on('$ionicView.enter', function(e) {                
                 if(_sc.routes.length === 0){
                     loadRoutes();    
                 }
                 loadPosts();
-                AppValue.tabBrowse = "tab.dashdetails";                                
+                AppValue.tabBrowse = "tab.dashdetails";
+                if(AppValue.platform === 'android'){
+                     _sc.barCSS = {height : '50px',padding : '0px',overflow : 'hidden', 'margin-top' : '50px'};
+                     _sc.contentCSS = {top : '125px'};        
+                }                                 
             });
     
             function changeType(){

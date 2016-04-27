@@ -41,7 +41,7 @@
                 
                 $scope.openDatePicker = function(){
                   
-                    alert('Calender');
+           
                     
                     console.log($cordovaDatePicker);
                     

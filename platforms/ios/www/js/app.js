@@ -8,8 +8,8 @@ angular.module('kilo', [
     'angularMoment'
     ])
 .run(
-  ['$ionicPlatform','$rootScope','$state','AppValue',  
-  function($ionicPlatform,$rootScope,$state,AppValue) {
+  ['$ionicPlatform','$rootScope','$state','AppValue','APPCONFIG',  
+  function($ionicPlatform,$rootScope,$state,AppValue,APPCONFIG) {
     $ionicPlatform.ready(
         function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,6 +23,9 @@ angular.module('kilo', [
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+            
+            AppValue.platform = ionic.Platform.platform();
+            
         });
     
      $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) { 
@@ -31,7 +34,7 @@ angular.module('kilo', [
          && to.name !== 'tab.dashdetailspost' && typeof(AppValue.auth) === 'undefined' )
         { 
             ev.preventDefault();         
-            //$state.go('login',{to : to.name});
+            $state.go('login',{to : to.name});
         } 
      });
         
@@ -40,11 +43,15 @@ angular.module('kilo', [
 .constant("APPCONFIG",
     {        
         URL : "http://kiloheroapi.flansoft.com/",
+        ANDRIOD : 'android',
+        IOS : 'ios',
+        WINDOW : 'wince',
         DEBUG : true 
     }
 )
 .value("AppValue", {
     auth : undefined, //{token : 'xxxxxxxxxxxxxxxxxxx'},
+    platform : '',
     tabBrowse : '#/tab/dash',
     tabBuySell :'#/tab/sell',
     tabChat: '#/tab/chats',

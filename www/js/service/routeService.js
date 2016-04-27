@@ -16,7 +16,7 @@
                 if (APPCONFIG.DEBUG){
                     return apiService.get("js/service/data/routes.js",null,success,failure);    
                 }else {
-                    return apiService.get(APPCONFIG.URL + 'routes', null, success, failure);                        
+                    return apiService.get(APPCONFIG.URL + 'route', null, success, failure);                        
                 }                                            
             }
         }               

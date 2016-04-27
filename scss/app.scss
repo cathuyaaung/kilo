@@ -53,8 +53,8 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
     position: absolute;    
     display: inline-block;
     width: 0;
-    height: 0;    
-    margin-top: 9px;
+    height: 0;   
+    margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
     padding: 0;
@@ -66,4 +66,19 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
 }
 .font-small{
   font-size: small;
+}  
+.sub-header-col{
+  padding-left: 4px;
+  padding-top:2px;
+  padding-bottom: 2px;
+  padding-right:0px;
 }
+ .main-col:before {
+    content:" ";
+    margin:0 -1px;
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: lightgray;
+  }

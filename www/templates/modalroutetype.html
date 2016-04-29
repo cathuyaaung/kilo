@@ -6,7 +6,10 @@
     <ion-content>
       <ion-list>
             <ion-item ng-repeat="item in data.routeTypes" ng-click="routeTypeSelected(item)">
-                {{item.desc}}
+                <div class="item-icon-right">
+                  {{item.desc}}
+                  <i class="icon ion-ios-checkmark-empty" ng-show="item.value === data.selectedRouteType"></i>  
+                </div>                
             </ion-item>
        </ion-list>
     </ion-content>

@@ -5,8 +5,11 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-            <ion-item ng-repeat="item in data.routes" ng-click="routeSelected(item)">
-                {{item.name}}
+            <ion-item ng-repeat="item in data.routes" ng-click="routeSelected(item)">               
+                  <div class="item-icon-right">
+                  {{item.name}}
+                  <i class="icon ion-ios-checkmark-empty" ng-show="item.id === data.selectedRoute.id"></i>  
+                </div>                
             </ion-item>
        </ion-list>
     </ion-content>

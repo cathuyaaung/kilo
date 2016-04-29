@@ -49,13 +49,17 @@
         </div>  
     </ion-header-bar>
     <ion-content scroll="true" ng-style="data.contentCSS">
-        <div class="card" collection-repeat="d in data.posts" ng-click="selectPost(d)" >
-            <div class="row" >
-                <div class="col">Date : {{d.date}}</div> <div class="col">{{d.user}}</div>
-            </div>
-            <div class="row">
-                <div class="col">Available Kilo : {{d.kilo}} kg</div> <div class="col"> Price : {{d.price}}</div>
-            </div>
+        <div class="card " collection-repeat="d in data.posts" ng-click="selectPost(d)" >
+           <div class="row">
+               <div class="col col-block">
+                    <div class="row" >
+                        <div class="col">Date : {{d.date}}</div> <div class="col">{{d.user}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Available Kilo : {{d.kilo}} kg</div> <div class="col"> Price : {{d.price}}</div>
+                    </div>       
+               </div>
+           </div>            
         </div>
     </ion-content>       
 </ion-view>

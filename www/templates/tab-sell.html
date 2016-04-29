@@ -1,5 +1,47 @@
 <ion-view view-title="KiLo123" >
     <ion-content scroll="true"  >
-    Tab Sell     
+    <form novalidate="novalidate" ng-submit="savePosts()">
+        <div class="items padding">
+          <div class="list items">
+              <label class="item item-input validated">
+              <span class="input-label">Want To</span>
+               <select ng-model="data.postType">
+                <option>Buy</option>
+                <option selected>Sell</option>
+               </select>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Total Kilo</span>
+              <input name="firstname" type="text" ng-model="data.kilo" required="required" >
+              <i class="icon ion-alert-circled error" ></i>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Price</span>
+              <input name="lastname" type="text" required="required" ng-model="data.price" >
+              <i class="icon ion-alert-circled error"></i>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Route</span>
+               <select ng-model="data.route" >
+                <option value="0">"Select a route..."</option>
+                <option ng-repeat="v in data.routes"  value="{{v.id}}">{{v.name}}</option>
+               </select>
+            </label>
+            <label class="item item-input validated">
+              <span class="input-label">Currency</span>
+               <select ng-model="data.currency">
+                <option>USD</option>
+                <option selected>SGD</option>
+                <option>MYR</option>
+               </select>
+            </label>
+            <button type="button" class="btn btn-primary" ng-click="openDatePicker()">Launch Custom Dialog</button>
+            <span class="text-info">{{data.selectedDate}}</span>
+          </div>
+            <button type="submit" class="button button-block button-calm" >
+            <strong>Submit</strong>
+          </button>
+        </div> 
+      </form> 
     </ion-content>       
 </ion-view>

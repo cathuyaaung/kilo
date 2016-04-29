@@ -33,8 +33,8 @@ angular.module('kilo', [
         if (to.name !== 'login' && to.name !== 'tab.dash' && to.name !== 'tab.dashdetails'
          && to.name !== 'tab.dashdetailspost' && typeof(AppValue.auth) === 'undefined' )
         { 
-            ev.preventDefault();         
-            $state.go('login',{to : to.name});
+            //ev.preventDefault();         
+            //$state.go('login',{to : to.name});
         } 
      });
         
@@ -46,7 +46,7 @@ angular.module('kilo', [
         ANDRIOD : 'android',
         IOS : 'ios',
         WINDOW : 'wince',
-        DEBUG : false 
+        DEBUG : true 
     }
 )
 .value("AppValue", {

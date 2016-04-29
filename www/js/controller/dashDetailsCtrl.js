@@ -73,9 +73,7 @@
                 }                                 
             });
     
-            function changeType(){
-                console.log(AppValue.routeTypes);
-                console.log(_sc.routeTypes);
+            function changeType(){              
                 if(typeof $scope.modalRouteType == 'undefined'){
                     $ionicModal.fromTemplateUrl('templates/modalroutetype.html', {
                         scope: $scope,

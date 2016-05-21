@@ -16,7 +16,7 @@
   ],
 
   // Install MongoDB on the server. Does not destroy the local MongoDB on future setups
-  "setupMongo": true,
+  //"setupMongo": true,
 
   // Application name (no spaces).
   "appName": "kilo-meteor",
@@ -29,6 +29,7 @@
   // Configure environment
   // ROOT_URL must be set to your correct domain (https or http)
   "env": {
+    "MONGO_URL": "mongodb://kiloherodbsa:Ki10Her0DbsA@kiloheroapi.flansoft.com/kiloherodb",
     "PORT": 80,
     "ROOT_URL": "http://ec2-52-77-228-190.ap-southeast-1.compute.amazonaws.com"
   },
